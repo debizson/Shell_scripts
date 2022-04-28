@@ -1,0 +1,17 @@
+#! /usr/bin/awk -f
+
+ 
+{
+i++
+ if(i%2==1)
+		{
+			print $0 " "
+		}
+ else if(i%2==0)
+		{
+			for(i=NF;i>=1;i--)
+				{
+					print $i " "
+				}
+		}
+}

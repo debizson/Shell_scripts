@@ -1,0 +1,19 @@
+#! /usr/bin/awk -f
+
+{
+	tomb[NR]=$5
+}
+END{
+	for(i=1;i<=NR;i++)
+		{
+			ossz+=tomb[i]
+		}
+		varh=ossz/NR
+	for(i=1;i<=NR;i++)
+		{
+		  szum+=((tomb[i]-varh)*(tomb[i]-varh))
+		}
+	szoras=sqrt(szum/NR)
+        print " az átlagos file meret: " varh " a szorásuk: " szoras
+} 
+		

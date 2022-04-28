@@ -1,0 +1,9 @@
+#! /usr/bin/awk -f
+
+	$1 ~ /^d/ {mappa++} 
+  	 $1 ~ /^l/  {link++} 
+	  $1 ~ /^-/ {file++}
+
+END{
+print "A könytárban : "mappa" mappa " link " link és " file " file van"
+}

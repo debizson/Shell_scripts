@@ -1,0 +1,3 @@
+#! /usr/bin/awk -f
+
+$1 ~ /^d/ {ossz++} END {print "a konyvtarak száma: "ossz} 

@@ -1,0 +1,12 @@
+#! /usr/bin/awk -f
+
+{
+	print toupper($NF)" "
+	
+	for(i=2;i<NF;i++)
+		{
+			print $i " "
+		}
+	print toupper($1)
+}
+			

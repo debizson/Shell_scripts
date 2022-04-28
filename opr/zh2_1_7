@@ -1,0 +1,21 @@
+#! /usr/bin/awk -f
+BEGIN{
+RS=" "
+}
+{
+
+	tomb[NR]=$0
+
+}
+END{
+	for(i=1;i<=NR;i++)
+		{
+			if(length(tomb[i])>length(max))
+				{
+					max=tomb[i]
+				}
+		}
+	print "Az állomány leghosszabb szava: " max
+}
+
+

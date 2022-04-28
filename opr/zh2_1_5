@@ -1,0 +1,9 @@
+
+
+awk '{ossz+=$5}END{print " a filek osszmérete:" ossz " és a du -s paracsal kapott méret pedig: "}'
+
+du -s | awk '{print}'
+
+
+ 
+

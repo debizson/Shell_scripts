@@ -1,0 +1,29 @@
+#! /usr/bin/awk -f
+
+
+{
+	if(NR>1)
+		{
+			tomb[NR]=$5
+			tombname[NR]=$9
+		}
+} 
+END {
+	min=tomb[2]
+	minneve=tombname[2]
+	for(i=2;i<=NR;i++)
+		{
+			if(max<tomb[i])
+				{
+					max=tomb[i]
+					maxneve=tombname[i]
+				}
+			if(min>tomb[i])
+				{
+					min=tomb[i]
+					minneve=tombname[i]
+				}
+		}
+	print "A legkisebb file neve: "minneve" a mérete: " min " \
+a legnagyobb file neve: " maxneve " mérete: " max ", a kető átlaga : " (max+min)/2
+}

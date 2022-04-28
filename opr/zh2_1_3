@@ -1,0 +1,30 @@
+#! /usr/bin/awk -f
+
+
+BEGIN{
+Num=0
+}
+{
+	if(FNR==1)
+		{
+			Num++
+			aktfilename[Num]=FILENAME
+		}			
+	for(i=1;i<=NF;i++)
+		{
+			akttomb[Num]++
+		}
+		
+}
+END{
+	for(i=1;i<=Num;i++)
+		{
+			if(max<akttomb[i])
+				{
+					max=akttomb[i]
+					aktname=aktfilename[i]
+				}
+		}
+print "A legtobb mezőt tartalmazó file neve :  \"" aktname "\" és " max " mezőt tartalmaz"
+}
+

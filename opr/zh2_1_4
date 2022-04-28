@@ -1,0 +1,23 @@
+#! /usr/bin/awk -f
+
+BEGIN{
+FS=";"
+}
+{
+	for(i=1;i<=NF;i++)
+		{
+			tombsor[NR]+=$i
+			tomboszlop[i]+=$i
+		}
+		#fildn=NF
+}
+END{
+	for(i=1;i<=NR;i++)
+		{
+			print "A(z) " i ". sor osszege: "tombsor[i]" átlaga: "tombsor[i]/NF
+		}
+	for(i=1;i<=NF;i++)
+		{
+			print "A(z) " i ". oszlop osszege: " tomboszlop[i] ", átlaga: " tomboszlop[i]/NR
+		}
+}

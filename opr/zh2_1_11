@@ -1,0 +1,18 @@
+#! /usr/bin/awk -f
+
+{
+	orszag[$1]++
+	tajak[$2]+=$5
+}
+END{
+	for(nev in orszag)
+		{
+			print nev " orszagból ennyi van :" orszag[nev]
+		}
+	print " "
+	for(taj in tajak)
+		{
+		     print "a " taj " tajegységből " tajak[taj]" az utvonalak \
+hossza "
+		}
+}

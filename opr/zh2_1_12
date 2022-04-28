@@ -1,0 +1,27 @@
+#! /usr/bin/awk -f
+
+BEGIN{
+akthossz=1
+}
+{
+	sorok[NR]=$0
+}
+END{
+	for(i=1;i<NR;i++)
+		{
+			if(sorok[i]==sorok[i+1])
+				{
+					akthossz++
+				}
+			else{
+				if(akthossz>max)
+					{
+						max=akthossz
+						maxsor=sorok[i]
+					}
+				akthossz=1
+			}
+		}
+	print "A  "maxsor" , egymásután " max " az \
+előfordulása, a legtobb "
+}
